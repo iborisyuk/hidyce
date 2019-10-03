@@ -66,6 +66,7 @@ public class Game {
         startRate += startRate;
         boolean status = playerRollAndCheckToWin();
         countDiceRoll = END_ROLL;
+
         return status;
     }
 

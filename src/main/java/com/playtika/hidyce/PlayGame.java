@@ -56,7 +56,13 @@ public class PlayGame {
                     System.err.println("Incorrect number! Enter again");
                 }
             }
-            game.end();
+
+            if (game.end() == player.getId()) {
+                System.out.println("You win!");
+            } else {
+                System.out.println("You lose!");
+            }
+
             System.out.printf("Player money: %d\nBank money: %d\n",
                     player.getMoney(), bank.getMoney());
             break;
@@ -77,12 +83,6 @@ public class PlayGame {
                 }
             }
 
-            if (status) {
-                System.out.println("You win!");
-            } else {
-                System.out.println("You lose!");
-            }
-
             break;
         }
     }
@@ -90,12 +90,6 @@ public class PlayGame {
     private void doubleBet() {
         boolean status = game.doubleBet();
         System.out.printf("Tou points: %d | Bank points: %d\n", game.getLastPlayerPoints(), game.getBankPoints());
-
-        if (status) {
-            System.out.println("You win!");
-        } else {
-            System.out.println("You lose!");
-        }
     }
 
     private void save() {
